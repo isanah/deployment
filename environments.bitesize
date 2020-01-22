@@ -1,0 +1,14 @@
+project: spring-tst
+environments:
+  - name: dev
+    namespace: spring-tst-dev
+    deployment:
+      method: bluegreen
+      mode: auto
+      active: blue
+    services:
+      - name: spring-app
+        external_url: sivatest.prsn.io
+        port: 8080
+        ssl: "false"
+        replicas: 2
